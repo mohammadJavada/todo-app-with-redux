@@ -31,7 +31,10 @@ export const todoReducers = (state = initialTodos, action) => {
       });
       return newTodos;
     }
-
+    case "delete": {
+      const newTodos = state.filter((item) => item.id !== todo.id);
+      return newTodos;
+    }
     default:
       return state;
   }

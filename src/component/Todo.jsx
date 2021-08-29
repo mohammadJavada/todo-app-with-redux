@@ -17,7 +17,10 @@ const Todo = ({ todo }) => {
             <i className="input-helper"> </i>
           </label>
         </div>
-        <i className="remove mdi mdi-close-circle-outline"></i>
+        <i
+          onClick={() => todoActions.deleteTodos(todo)}
+          className="remove mdi mdi-close-circle-outline"
+        ></i>
       </li>
     </div>
   );

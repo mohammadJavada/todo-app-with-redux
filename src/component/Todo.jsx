@@ -11,6 +11,7 @@ const Todo = ({ todo }) => {
               className="checkbox"
               type="checkbox"
               checked={todo.isCompleted}
+              onClick={() => todoActions.changeStatus(todo)}
             />
             {todo.title}
             <i className="input-helper"> </i>

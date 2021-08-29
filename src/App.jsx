@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import Todo from "./component/Todo";
+import TodoInput from "./component/TodoInput";
 const App = () => {
   return (
     <div>
@@ -9,43 +11,10 @@ const App = () => {
             <div className="card px-3">
               <div className="card-body">
                 <h4 className="card-title">Awesome Todo list</h4>
-                <div className="add-items d-flex">
-                  <input
-                    type="text"
-                    className="form-control todo-list-input"
-                    placeholder="What do you need to do today?"
-                  />
-                  <button className="add btn btn-primary font-weight-bold todo-list-add-btn">
-                    Add
-                  </button>
-                </div>
+                <TodoInput />
                 <div className="list-wrapper">
                   <ul className="d-flex flex-column todo-list">
-                    <li>
-                      <div className="form-check">
-                        <label className="form-check-label">
-                          <input className="checkbox" type="checkbox" />
-                          Buy Milk.
-                          <i className="input-helper"> </i>
-                        </label>
-                      </div>
-                      <i className="remove mdi mdi-close-circle-outline"></i>
-                    </li>
-                    <li className="completed">
-                      <div className="form-check">
-                        <label className="form-check-label">
-                          {" "}
-                          <input
-                            className="checkbox"
-                            type="checkbox"
-                            checked=""
-                          />{" "}
-                          Wash dishes.
-                          <i className="input-helper"></i>
-                        </label>
-                      </div>{" "}
-                      <i className="remove mdi mdi-close-circle-outline"></i>
-                    </li>
+                    <Todo />
                   </ul>
                 </div>
               </div>

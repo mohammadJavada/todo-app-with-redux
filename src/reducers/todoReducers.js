@@ -16,7 +16,13 @@ const initialTodos = [
     isCompleted: false,
   },
 ];
-const todoReducers = (state = initialTodos, action) => {
+export const todoReducers = (state = initialTodos, action) => {
+  const todo = action.payload;
   switch (action.type) {
+    case "add":
+      return [todo, ...state];
+
+    default:
+      return state;
   }
 };

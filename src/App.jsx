@@ -1,9 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import "./App.css";
 import Todo from "./component/Todo";
 import TodoInput from "./component/TodoInput";
 const App = () => {
-  
+  const todos = useSelector((state) => state.todos);
   return (
     <div>
       <div className="page-content page-container" id="page-content">
@@ -15,7 +16,9 @@ const App = () => {
                 <TodoInput />
                 <div className="list-wrapper">
                   <ul className="d-flex flex-column todo-list">
-                    <Todo />
+                    {todos.map((todo) => (
+                      <Todo todo={todo} />
+                    ))}
                   </ul>
                 </div>
               </div>
